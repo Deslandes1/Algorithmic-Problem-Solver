@@ -267,17 +267,14 @@ Keep your answer concise and helpful. Respond in {language}."""
 # ================== TABS ==================
 tab1, tab2, tab3 = st.tabs([texts["video_tab"], texts["practice_tab"], texts["ai_tab"]])
 
-# ---------- Tab 1: Video Introduction ----------
+# ---------- Tab 1: Video Introduction (with your narrated video) ----------
 with tab1:
     st.markdown(f"### {texts['video_title']}")
     st.markdown(texts['video_desc'])
-    # Pre-filled Dropbox link (use dl=1); user can change it
-    default_video = "https://www.dropbox.com/scl/fi/example.mp4?dl=1"
-    video_url = st.text_input(texts["video_placeholder"], value=default_video)
-    if video_url:
-        st.video(video_url)
-    else:
-        st.info("No video link provided. You can record a walkthrough and paste the link here.")
+    # Your narrated video link (already using dl=1)
+    video_link = "https://www.dropbox.com/scl/fi/jkg9lf0s2dc6s4xolvzil/icpc_demo_narrated.mp4?rlkey=0yzxr4z3g8131f0e3okg9ww76&st=ntp1wm2d&dl=1"
+    st.video(video_link)
+    st.caption("If the video does not play, click the three dots → Download to save it locally.")
 
 # ---------- Tab 2: Practice Problem ----------
 with tab2:
